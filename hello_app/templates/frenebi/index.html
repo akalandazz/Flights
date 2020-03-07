@@ -1,0 +1,18 @@
+{% extends "frenebi/base.html" %}
+
+{% block title %}
+  Frenebi
+ {% endblock %}
+
+
+{% block body %}
+<h1>FRENEBI</h1>
+<ul>
+	{% for flight in flights%}
+		<li> 
+			<a href="{% url 'frena' flight.id%}"> {{ flight }}
+			</a>
+		</li>
+	{%endfor %}	
+</ul>
+{% endblock %}
