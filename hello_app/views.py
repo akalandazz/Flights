@@ -18,9 +18,9 @@ def frena(request, flight_id):
 	except Flight.DoesNotExist:
 		raise Http404('Flight does not exist')
 
-	context = {"frena": frena_, "non_passengers":frena_.passengers.all(),
+	context = {"frena": frena_, "tvt_mgzavrebi":frena_.passengers.all(),
 	#this line of code shows us the passengers who aren't registered on particular flight yet
-	"tvt_mgzavrebi": Passenger.objects.exclude(reisi=frena_).all()
+	"non_passengers": Passenger.objects.exclude(reisi=frena_).all()
 	}
 	return render(request, 'frenebi/frena.html', context)
 
